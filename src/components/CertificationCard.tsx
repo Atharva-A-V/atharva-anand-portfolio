@@ -30,9 +30,16 @@ const CertificationCard = ({ title, issuer, date, validUntil, link }: Certificat
             </div>
           </div>
           {link && (
-            <Button variant="ghost" size="sm" className="group/btn">
-              <ExternalLink className="h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-            </Button>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/btn"
+            >
+              <Button variant="ghost" size="sm">
+                <ExternalLink className="h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+              </Button>
+            </a>
           )}
         </div>
       </CardHeader>

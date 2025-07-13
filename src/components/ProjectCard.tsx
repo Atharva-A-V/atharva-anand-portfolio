@@ -16,15 +16,18 @@ const ProjectCard = ({ title, description, link, technologies }: ProjectCardProp
         <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-glow transition-colors flex items-center gap-2">
           {title}
           {link && (
-            <ExternalLink className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="h-5 w-5 opacity-0 group-hover:opacity-100 transition-opacity" />
+            </a>
           )}
         </CardTitle>
       </CardHeader>
+
       <CardContent className="flex flex-col h-full">
         <p className="text-foreground leading-relaxed mb-4 flex-grow">
           {description}
         </p>
-        
+
         {technologies && (
           <div className="flex flex-wrap gap-2 mb-4">
             {technologies.map((tech, index) => (
@@ -37,12 +40,19 @@ const ProjectCard = ({ title, description, link, technologies }: ProjectCardProp
             ))}
           </div>
         )}
-        
+
         {link && (
-          <Button variant="outline" className="self-start group/btn">
-            <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
-            View Project
-          </Button>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="self-start"
+          >
+            <Button variant="outline" className="group/btn">
+              <Github className="mr-2 h-4 w-4 group-hover/btn:scale-110 transition-transform" />
+              View Project
+            </Button>
+          </a>
         )}
       </CardContent>
     </Card>

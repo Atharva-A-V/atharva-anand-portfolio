@@ -23,7 +23,14 @@ const ExperienceCard = ({ company, position, duration, location, points, link }:
             <div className="flex items-center gap-2 text-lg font-semibold text-foreground mb-2">
               {company}
               {link && (
-                <ExternalLink className="h-4 w-4 text-primary hover:text-primary-glow cursor-pointer transition-colors" />
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                >
+                  <ExternalLink className="h-4 w-4 text-primary hover:text-primary-glow cursor-pointer transition-colors" />
+                </a>
               )}
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
